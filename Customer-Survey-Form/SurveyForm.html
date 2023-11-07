@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SURVEY FORM</title>
+    <link rel="stylesheet" href="SueveyForm.css">
+</head>
+
+<body>
+    <h1>Customer Survey Form</h1>
+    <form id="surveyForm" class="container">
+        <div class="row">
+            <label for="firstName">First Name:</label>
+            <input type="text" id="firstName" required>
+        </div>
+        
+        <div class="row">
+            <label for="lastName">Last Name:</label>
+            <input type="text" id="lastName" required>
+
+        </div>
+        
+       <div class="row">
+        <label for="dob">Date of Birth:</label>
+        <input type="date" id="dob" required>
+       </div>
+        
+        <div class="row">
+            <label for="country">Country:</label>
+            <select id="country" required>
+                <option value="">Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="UK">UK</option>
+                <option value="Canada">Canada</option>
+                <!-- Add more options as needed -->
+            </select>
+        </div>
+        
+       <div class="row">
+            <label for="gender">Gender:</label>
+            <input type="checkbox" id="male" name="gender" value="male" style="margin-top: 10px;">Male
+            <input type="checkbox" id="female" name="gender" value="female" style="margin-top: 10px;">Female
+       
+       </div> 
+       
+       <div class="row">
+            <label for="profession">Profession:</label>
+            <input type="text" id="profession" required>
+       </div>
+       
+        <div class="row">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+        </div>
+        
+        <div class="row">
+            <label for="mobile">Mobile Number:</label>
+            <input type="tel" id="mobile" required>
+        </div>
+        
+        <button type="submit" value="Submit" onclick="submitForm()">Submit</button>
+
+        <button type="reset" value="Reset" onclick="resetForm()">Reset</button>
+    </form>
+
+    <script>
+        function submitForm() {
+            var firstName = document.getElementById("firstName").value;
+            var lastName = document.getElementById("lastName").value;
+            var dob = document.getElementById("dob").value;
+            var country = document.getElementById("country").value;
+            var gender = document.querySelector('input[name="gender"]:checked');
+            var profession = document.getElementById("profession").value;
+            var email = document.getElementById("email").value;
+            var mobile = document.getElementById("mobile").value;
+
+            if (!firstName || !lastName || !dob || !country || !gender || !profession || !email || !mobile) {
+                alert("Please fill in all fields");
+                return;
+            }
+
+            var genderValue = gender ? gender.value : "";
+
+            var popupContent = `First Name: ${firstName}\nLast Name: ${lastName}\nDate of Birth: ${dob}\nCountry: ${country}\nGender: ${genderValue}\nProfession: ${profession}\nEmail: ${email}\nMobile Number: ${mobile}`;
+            alert(popupContent);
+
+            document.getElementById("surveyForm").reset();
+        }
+
+        function resetForm() {
+            document.getElementById("surveyForm").reset();
+        }
+    </script>
+     <footer>&copy;2023 Customer Survey Form. All rights Reserved | Design by <span>Karan Shewale</span></footer>
+
+</body>
+
+</html>
