@@ -1,0 +1,51 @@
+body{
+    background-color: lightgray;
+}
+.container{    
+    text-align: center;
+    margin-top:200px
+}
+
+input {
+    border: 1px solid white;
+    font-size:30px;
+    padding: 2px;
+    width: 250px;
+    scroll-behavior: smooth;
+}
+input:hover{
+    border: 1px white solid;
+}
+button{
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    width: 60px;
+    height: 50px;
+    padding: 10px;
+}
+.digit{
+    margin: 0px;
+    padding:0px;
+    display: contents;
+}
+.clearButton input{
+    display: block;
+    margin: 0px;
+    padding:0px;
+}
+.clearButton{
+    background-color: rgb(0, 128, 92);
+    border: 1px solid rgb(0, 128, 92);
+}
+.Operator{
+    background-color: gray;
+    border:5px solid gray  ;
+    margin: 0px;
+    padding:0px;
+    display:flexbox;
+}
+.calculator{
+    background-color:black;
+    display: inline-block;
+}
